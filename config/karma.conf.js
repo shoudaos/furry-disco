@@ -1,7 +1,3 @@
-/**
- * @author: @AngularClass
- */
-
 module.exports = function(config) {
   var testWebpackConfig = require('./webpack.test.js')({env: 'test'});
 
@@ -77,28 +73,14 @@ module.exports = function(config) {
      * available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
      */
     browsers: [
-      'Chrome'
+      'PhantomJS'
     ],
-
-    customLaunchers: {
-      ChromeTravisCi: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
-
     /*
      * Continuous Integration mode
      * if true, Karma captures browsers, runs the tests and exits
      */
     singleRun: true
   };
-
-  if (process.env.TRAVIS){
-    configuration.browsers = [
-      'ChromeTravisCi'
-    ];
-  }
 
   config.set(configuration);
 };

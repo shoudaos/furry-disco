@@ -1,7 +1,3 @@
-/**
- * @author: @AngularClass
- */
-
 require('ts-node/register');
 var helpers = require('./helpers');
 
@@ -26,13 +22,10 @@ exports.config = {
     includeStackTrace: false,
     defaultTimeoutInterval: 400000
   },
-  directConnect: true,
+  directConnect: false,
 
   capabilities: {
-    'browserName': 'chrome',
-    'chromeOptions': {
-      'args': ['show-fps-counter=true']
-    }
+    'browserName': 'phantomjs'
   },
 
   onPrepare: function() {
